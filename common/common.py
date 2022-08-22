@@ -1,6 +1,8 @@
 # 通用函数放在这里
 import datetime
 import hashlib
+import random
+import string
 import sys
 import time
 
@@ -29,9 +31,15 @@ def get_sha1(string):
     sha1 = hashlib.sha1(string.encode(encoding='UTF-8')).hexdigest()
     return sha1
 
+def get_md5(string):
+    md5 = hashlib.md5(string.encode('utf-8')).hexdigest()
+    return md5
+
 
 def str_to_time(time_str):
     timeArray = time.strptime(str(time_str), "%Y-%m-%d %H:%M:%S")
     time_stamp = int(time.mktime(timeArray))
     return time_stamp
 
+def create_rand_string(length):
+    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(length))
