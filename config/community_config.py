@@ -1,0 +1,22 @@
+server_table = {
+    'http_1':{
+            'host':'127.0.0.1',
+            'port':10086,
+            'protcol':'ws'
+        },
+    'http_2':{
+            'host':'127.0.0.1',
+            'port':10086,
+            'protcol':'ws'
+        },
+    'ws_1':{
+            'host':'127.0.0.1',
+            'port':10086,
+            'protcol':'ws'
+        },
+    'ws_2':{
+            'host':'127.0.0.1',
+            'port':10086,
+            'protcol':'ws'
+        },
+}

@@ -1,0 +1,12 @@
+0 依赖包在requirements.txt里，mac或者linux系统应该可以很轻松完成配置
+
+===========分割线===========
+
+1 这是一个完整的业务型服务端，大部分地方应该不需要修改
+2 根据服务器操作系统修改config/server_config.py里的PLATFORM_TYPE_WINDOWS配置
+3 使用之前需要安装mysql数据库，mysql数据库的用户名，密码，数据库名称需要填写到config/db_config.py文件中的配置json里
+4 返回给客户端的错误信息在error/error.py里配置
+5 所有模块都可能依赖的公用代码放在common/common.py内
+6 http接口根据需要，在app/http/modes/xxx/handlers中分类放置，开发风格参考app/http/modes/uni/handlers/uni_basehandler.py
+7 接口写完以后记得通过对应的__init__.py文件配置路由表，添加方式参考app/http/modes/uni/__init__.py
+

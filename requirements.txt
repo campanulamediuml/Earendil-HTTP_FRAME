@@ -1,0 +1,5 @@
+aiomysql==0.0.21
+anduin==7.0.29
+PyMySQL==0.9.3
+tornado==6.1
+Werkzeug==2.1.2
