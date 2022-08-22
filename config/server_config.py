@@ -12,4 +12,6 @@ IS_DEBUG = True
 # 是否Degbug模式
 PLATFORM_TYPE_WINDOWS = 'win32'
 # 系统平台 win32 linux darwin
+log_path = '/home/xxx/'
+# 日志保存地址
 interpreter = 'python3'
