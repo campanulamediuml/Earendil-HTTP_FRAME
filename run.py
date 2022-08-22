@@ -13,7 +13,7 @@ clean  清除日志
 shutdown pid 关闭进程
 start name 启动进程
 """
-script_list = ['server_main']
+# script_list = ['server_main']
 
 # query = 'ps -x | grep /usr/bin/python3'
 # running_proc = os.popen(query).readlines()
@@ -64,7 +64,7 @@ def kill():
     script = sys.argv[2]
     # if script not in script_list:
     #     return print('这个进程无法通过运维脚本杀死...')
-    query = 'ps -x | grep python3'
+    query = 'ps -x | grep %s'%interpreter
     running_proc = os.popen(query).readlines()
     for line in running_proc:
         # print(line)
