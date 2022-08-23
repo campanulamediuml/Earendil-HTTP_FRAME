@@ -1,6 +1,8 @@
 # import asyncio
-from app.http.relay.relay import Relay
-from app.http import mods
+from app.http.relay.relay import Relay as HTTP_Relay
+from app.http.relay.relay import Relay as WS_Relay
+from app.http import mods as http_mods
+from app.ws import event as ws_mods
 import tornado.web
 import tornado.ioloop
 import tornado.httpserver
@@ -12,14 +14,21 @@ settings = {'debug' : server_config.IS_DEBUG}
 
 
 class HttpServer(object):
-    def __init__(self, host, port):
+    def __init__(self, host, port,server_type='http'):
+        self.server_type = server_type
         self._host = host
         self._port = port
         self._apps = self.register_handles()
-        Relay.init(self)
+        if server_type == 'http':
+            HTTP_Relay.init(self)
+        if server_type == 'ws':
+            WS_Relay.init(self)
 
     def register_handles(self):
-        res = mods.route_list
+        if self.server_type == 'http':
+            res = http_mods.route_list
+        else:
+            res = ws_mods.route_list
         return res
 
     def get_server_host(self):

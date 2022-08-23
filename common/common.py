@@ -6,6 +6,10 @@ import string
 import sys
 import time
 
+def dbg(*args):
+    now_ts = time.time()
+    res = ['[%s %s]' % (time_to_str(now_ts),now_ts)] + list(args)
+    print(*res)
 
 def get_sys_info():
     os_info = sys.platform

@@ -68,7 +68,7 @@ class HandlerBase(RequestHandler):
             print('<===获取到真实ip===>', remote_ip)
         return remote_ip
 
-    @run_on_executor
+    # @run_on_executor
     def options(self):
         print('<---------收到跨域请求，返回空值--------->')
         self.write({})

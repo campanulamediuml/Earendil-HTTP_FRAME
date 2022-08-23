@@ -3,7 +3,8 @@ import time
 from anduin import Data
 from tornado.concurrent import run_on_executor
 from werkzeug.security import generate_password_hash
-from app.http.handler_base import HandlerBase
+
+from app.handler_base.handler_base import HandlerBase
 from dbmodel.db_data import table
 from error import error
 
