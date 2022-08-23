@@ -47,3 +47,16 @@ def str_to_time(time_str):
 
 def create_rand_string(length):
     return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(length))
+
+def get_start_and_end_index(page,per_page):
+    return [(page - 1) * per_page, per_page]
+
+def get_page_count_by_length(per_page,length):
+    max_page = 0
+    if length != None:
+        max_page = length / per_page
+        if int(max_page) < max_page:
+            max_page += 1
+        if int(max_page) == 0:
+            max_page += 1
+    return int(max_page)
