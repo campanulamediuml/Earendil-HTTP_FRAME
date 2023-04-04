@@ -5,6 +5,12 @@ class Relay():
     #{
         # request_id:request_time
     # }
+    read_file_handler_dict = {
+        'filename':'filehandler'
+    }
+    write_file_handler_dict = {
+        'filename': 'filehandler'
+    }
 
     @staticmethod
     def init(server):

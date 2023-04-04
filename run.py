@@ -2,8 +2,8 @@ import datetime
 import os
 import time
 import sys
-# from common.common import time_to_str
-from common.common import time_to_str
+# from utils.utils import time_to_str
+from utils.common import time_to_str
 from config.server_config import log_path, interpreter
 
 doc = """Error - 指令缺失

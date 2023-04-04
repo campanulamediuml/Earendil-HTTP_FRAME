@@ -1,4 +1,13 @@
-# import asyncio
+import asyncio
+import sys
+
+if sys.platform != 'win32':
+    import uvloop
+    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+    print(sys.platform, '操作系统，自动加载uvloop策略')
+else:
+    print(sys.platform, '操作系统，无法加载uvloop策略，采用默认策略')
+
 from app.http.relay.relay import Relay as HTTP_Relay
 from app.http.relay.relay import Relay as WS_Relay
 from app.http import mods as http_mods
@@ -7,13 +16,16 @@ import tornado.web
 import tornado.ioloop
 import tornado.httpserver
 import tornado.options
-from common.Scheduler import Scheduler
+from utils.Scheduler import Scheduler
 from config import server_config
+
+
+
 
 settings = {'debug' : server_config.IS_DEBUG}
 
 
-class HttpServer(object):
+class ServerHandler(object):
     def __init__(self, host, port,server_type='http'):
         self.server_type = server_type
         self._host = host

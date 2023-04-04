@@ -6,7 +6,7 @@ import heapq
 from threading import Timer
 import random
 # import _thread as thread
-from common import common
+from utils import common
 from config.server_config import PLATFORM_TYPE_WINDOWS
 
 TIME_ACCURACY = 1  # 时间精度，时间精度不是越小越好！你的Task每次循环超过了这个值,将影响准确度

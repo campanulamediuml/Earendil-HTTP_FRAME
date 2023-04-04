@@ -1,8 +1,8 @@
 import json
 import time
 
-from common import common
-from common.common import dbg
+from utils import common
+from utils.common import dbg
 from error.error import error_info
 
 

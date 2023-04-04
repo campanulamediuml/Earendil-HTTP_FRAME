@@ -1,6 +1,6 @@
 from app.ws.event.event_base import event_base
 from app.ws.relay.relay import Relay
-from common.common import dbg
+from utils.common import dbg
 
 
 class devset_offline(event_base):
